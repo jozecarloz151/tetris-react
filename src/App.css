@@ -1,0 +1,62 @@
+:root {
+  --square-size: 2rem;
+  --board-width: 10;
+  --board-height: 20;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tetris-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tetris-container {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  width: calc(var(--square-size) * 30);
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.tetris-container:focus {
+  outline: none;
+}
+
+.board-container {
+  width: fit-content;
+  position: relative;
+}
+
+.message-container {
+  height: 100%;
+  width: 100%;
+  display: table;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FFFFFF80;
+}
+
+.message-sub-container {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100px;
+}
+
+.message {
+  width: fit-content;
+  margin: auto;
+  padding: 15px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px 40px;
+}

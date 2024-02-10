@@ -1,2 +1,2 @@
 # tetris-react
-Tetris-style game implemented with react.
+Tetris-style game implemented in react.

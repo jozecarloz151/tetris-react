@@ -1,0 +1,20 @@
+.tetris-board {
+  border-radius: 5px;
+  border: 2px solid rgb(249, 92, 92);
+  width: calc(var(--square-size) * var(--board-width));
+  height: calc(var(--square-size) * var(--board-height));
+  margin: auto;
+  position: relative;
+  background-position: 0.2px 0px;
+  background-image:
+    linear-gradient(to bottom, transparent 98%, rgb(105, 105, 105) 98%),
+    linear-gradient(to right, black 98%, rgb(105, 105, 105) 98%);
+  background-size: var(--square-size) var(--square-size), var(--square-size) var(--square-size);
+  display: grid;
+  grid-template-columns: repeat(var(--board-width), 1fr);
+  grid-template-rows: repeat(var(--board-height), 1fr);
+}
+
+.tetris-board:focus {
+  outline: none;
+}

@@ -1,0 +1,43 @@
+.empty-cell {
+  background-color: transparent;
+  width: var(--square-size);
+  height: var(--square-size);
+}
+
+.basic-block {
+  box-sizing: border-box;
+  border-radius: 12%;
+  border: 2px solid #FFFFFF80;
+  width: var(--square-size);
+  height: var(--square-size);
+  outline: 2.5px solid #00000080;
+  outline-offset: calc(-0.15 * var(--square-size));
+}
+
+.red {
+  background-color: #df0000;
+}
+
+.purple {
+  background-color: #ae00d2;
+}
+
+.light-blue {
+  background-color: #00d2e9;
+}
+
+.yellow {
+  background-color: #f1de00;
+}
+
+.green {
+  background-color: #00d14d;
+}
+
+.blue {
+  background-color: #007ce1;
+}
+
+.orange {
+  background-color: #e79f00;
+}
