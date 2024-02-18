@@ -1,5 +1,4 @@
 import { faArrowDown, faArrowLeft, faArrowRight, faPause, faPlay, faRotate, faSortDown, faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
-import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
