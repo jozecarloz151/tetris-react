@@ -38,15 +38,18 @@ main {
   flex-wrap: wrap;
   position: relative;
   justify-content: space-around;
-  width: calc(var(--square-size) * 30);
-  border: 1px solid black;
+  width: fit-content;
   border-radius: 10px;
   padding: 25px 10px;
   margin: auto;
   max-width: 85%;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 960px) {
+.tetris-container>div {
+  margin: 0px 15px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
   :root {
     --square-size: 1.5rem;
   }
@@ -57,6 +60,14 @@ main {
 
   .detail {
     font-size: 0.8rem;
+  }
+
+  .tetris-container {
+    max-width: 450px;
+  }
+
+  .controls {
+    display: none;
   }
 }
 
@@ -79,21 +90,21 @@ main {
   }
 
   .controls-container {
-    width: 100%;
     flex-direction: row;
     justify-content: space-around;
   }
 
-  .controls {
-    width: calc(var(--square-size) * 10);
+  .button {
+    flex-basis: 50%;
+    width: 20px;
   }
 
-  .buttons-container {
-    width: calc(var(--square-size) * 5);
+  .controls {
+    display: none;
   }
 
   .tetris-container {
-    padding: 8px;
+    max-width: 308px;
   }
 }
 
@@ -135,17 +146,22 @@ main {
 
 .buttons-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .button {
-  width: 100%;
-  padding: 15px 25px;
-  margin-top: 15px;
-  align-items: center;
+  padding: 10px 10px;
+  margin: 5px;
+  flex-basis: 16%;
+  width: 30px;
 }
 
 .subtitle {
   margin: 0;
+}
+
+.right-side-container {
+  height: fit-content;
 }

@@ -1,13 +1,22 @@
+import { faArrowDown, faArrowLeft, faArrowRight, faPause, faPlay, faRotate, faSortDown, faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
+import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 interface Props {
   pauseGame: () => void
   resumeGame: () => void
   muteGame: () => void
+  moveLeft: () => void
+  moveRight: () => void
+  moveDown: () => void
+  rotate: () => void
+  hardDrop: () => void
   isGamePaused: boolean
+  gameMuted: boolean
 }
 
-export function Controls ({ pauseGame, resumeGame, muteGame, isGamePaused }: Props) {
+export function Controls ({ pauseGame, resumeGame, muteGame, moveLeft, moveRight, moveDown, rotate, hardDrop, isGamePaused, gameMuted }: Props) {
   return (
     <div className='controls-container'>
       <div className='controls'>
@@ -19,26 +28,42 @@ export function Controls ({ pauseGame, resumeGame, muteGame, isGamePaused }: Pro
         <p className='detail'>〔Space〕Hard drop</p>
       </div>
       <div className='buttons-container'>
+        <button className='button' onClick={moveLeft} title='Move Left'><FontAwesomeIcon icon={faArrowLeft} /></button>
+        <button className='button' onClick={moveRight} title='Move Right'><FontAwesomeIcon icon={faArrowRight} /></button>
+        <button className='button' onClick={moveDown} title='Soft Drop'><FontAwesomeIcon icon={faArrowDown} /></button>
+        <button className='button' onClick={rotate} title='Rotate Block'><FontAwesomeIcon icon={faRotate} /></button>
+        <button className='button' onClick={hardDrop} title='Hard Drop'><FontAwesomeIcon icon={faSortDown} /></button>
         {
           isGamePaused
             ? (
-              <button className='button' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
+              <button className='button' title='Resume Game' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
                 ev.currentTarget.blur()
                 resumeGame()
-              }}><span className='detail'>Resume</span></button>
+              }}><FontAwesomeIcon icon={faPlay} /></button>
             )
             : (
-              <button className='button' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
+              <button className='button' title='Pause Game' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
                 ev.currentTarget.blur()
                 pauseGame()
-              }}><span className='detail'>Pause</span></button>
+              }}><FontAwesomeIcon icon={faPause} /></button>
             )
         }
-        <button className='button' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
-          ev.currentTarget.blur()
-          muteGame()
-        }}><span className='detail'>Mute</span></button>
+        {
+          gameMuted
+            ? (
+              <button className='button' title='Unmute Game' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
+                ev.currentTarget.blur()
+                muteGame()
+              }}><FontAwesomeIcon icon={faVolumeMute} /></button>
+            )
+            : (
+              <button className='button' title='Mute Game' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
+                ev.currentTarget.blur()
+                muteGame()
+              }}><FontAwesomeIcon icon={faVolumeUp} /></button>
+            )
+        }
       </div>
-    </div>
+    </div >
   )
 }

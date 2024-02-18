@@ -10,9 +10,10 @@ interface Props {
   score: number
   currentLevel: number
   linesCleared: number
+  isGamePaused: boolean
 }
 
-export function TetrisBoard ({ board, score, currentLevel, linesCleared }: Props) {
+export function TetrisBoard ({ board, score, currentLevel, linesCleared, isGamePaused }: Props) {
   useEffect(() => {
     document.documentElement.style.setProperty('--board-width', BOARD_WIDTH + '')
     document.documentElement.style.setProperty('--board-height', BOARD_HEIGHT + '')
@@ -31,7 +32,13 @@ export function TetrisBoard ({ board, score, currentLevel, linesCleared }: Props
           ))
         }
       </div>
-
+      {
+        isGamePaused && <div className='message-container'>
+          <div className='message-sub-container'>
+            <h3>PAUSED</h3>
+          </div>
+        </div>
+      }
     </div>
   )
 }

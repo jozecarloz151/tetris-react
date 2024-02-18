@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
 html {
   width: 100%;
 }
@@ -21,7 +23,7 @@ a:hover {
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inconsolata", monospace;
   line-height: 1.5;
   font-weight: 400;
 
@@ -64,7 +66,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Inconsolata", monospace;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;

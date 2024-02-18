@@ -57,14 +57,14 @@ export function TetrisGame () {
 
   return (
     <div ref={tetrisContainerRef} onKeyDown={handleOnKeyDown} tabIndex={0} className='tetris-container'>
-      <TetrisBoard board={board} currentLevel={currentLevel} score={score} linesCleared={linesCleared} />
+      <TetrisBoard board={board} currentLevel={currentLevel} score={score} linesCleared={linesCleared} isGamePaused={isGamePaused} />
       <NextBlocks nextBlocks={nextBlocks} />
       <Controls pauseGame={() => {
         pauseGame()
       }} resumeGame={() => {
         resumeGame()
         tetrisContainerRef.current?.focus()
-      }} isGamePaused={isGamePaused} muteGame={muteGame} />
+      }} isGamePaused={isGamePaused} muteGame={muteGame} gameMuted={gameMuted} moveLeft={moveLeft} moveRight={moveRight} moveDown={moveDown} rotate={rotateBlock} hardDrop={hardDrop} />
       {
         isGameOver && <div className='message-container'>
           <div className='message-sub-container'>
