@@ -10,36 +10,34 @@ interface Props {
 export function Controls ({ pauseGame, resumeGame, muteGame, isGamePaused }: Props) {
   return (
     <div className='controls-container'>
-      <h3>CONTROLS</h3>
-      <p>〔→ , D〕 Move right</p>
-      <p>〔← , A〕 Move left</p>
-      <p>〔↓ , S〕 Soft drop</p>
-      <p>〔Space〕Hard drop</p>
-      <p>〔↑ , W〕 Rotate right</p>
-      <hr />
-      <div>
+      <div className='controls'>
+        <h3 className='subtitle'>CONTROLS</h3>
+        <p className='detail'>〔→ , D〕 Move right</p>
+        <p className='detail'>〔← , A〕 Move left</p>
+        <p className='detail'>〔↓ , S〕 Soft drop</p>
+        <p className='detail'>〔↑ , W〕 Rotate right</p>
+        <p className='detail'>〔Space〕Hard drop</p>
+      </div>
+      <div className='buttons-container'>
         {
           isGamePaused
             ? (
-              <button onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
+              <button className='button' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
                 ev.currentTarget.blur()
                 resumeGame()
-              }}>Resume Game</button>
+              }}><span className='detail'>Resume</span></button>
             )
             : (
-              <button onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
+              <button className='button' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
                 ev.currentTarget.blur()
                 pauseGame()
-              }}>Pause Game</button>
+              }}><span className='detail'>Pause</span></button>
             )
         }
-      </div>
-      <br />
-      <div>
-        <button onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
+        <button className='button' onClick={(ev: React.MouseEvent<HTMLButtonElement>) => {
           ev.currentTarget.blur()
           muteGame()
-        }}>Mute Game</button>
+        }}><span className='detail'>Mute</span></button>
       </div>
     </div>
   )

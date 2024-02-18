@@ -3,10 +3,9 @@ import { TetrisGame } from './components/TetrisGame'
 
 function App () {
   return (
-    <>
-      <h1>Tetris</h1>
+    <main>
       <TetrisGame />
-    </>
+    </main>
   )
 }
 

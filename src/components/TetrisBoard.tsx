@@ -20,7 +20,7 @@ export function TetrisBoard ({ board, score, currentLevel, linesCleared }: Props
 
   return (
     <div className='board-container'>
-      <h3>SCORE: {score} || LEVEL: {currentLevel} || LINES: {linesCleared}</h3>
+      <h3 className='subtitle'>SCORE: {score} | LEVEL: {currentLevel} | LINES: {linesCleared}</h3>
       <div className='tetris-board'>
         {
           board.map((line, i) => (

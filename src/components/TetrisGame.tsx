@@ -16,16 +16,16 @@ export function TetrisGame () {
   }, [])
 
   useEffect(() => {
+    tetrisThemeAudio.current.pause()
     if (hasGameStarted) {
       tetrisContainerRef.current?.focus()
-      tetrisThemeAudio.current.pause()
-      if (!isGamePaused && !gameMuted) {
+      if (!isGamePaused && !gameMuted && !isGameOver) {
         tetrisThemeAudio.current = new Audio(TetrisTheme)
         void tetrisThemeAudio.current.play()
         tetrisThemeAudio.current.loop = true
       }
     }
-  }, [hasGameStarted, isGamePaused, gameMuted])
+  }, [hasGameStarted, isGamePaused, gameMuted, isGameOver])
 
   function muteGame () {
     setGameMuted((current) => !current)

@@ -1,14 +1,23 @@
+main {
+  margin: auto;
+}
+
 :root {
-  --square-size: 2rem;
+  --square-size: 1.9rem;
   --board-width: 10;
   --board-height: 20;
 }
 
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.8rem;
   text-align: center;
+}
+
+.title {
+  font-size: 2.8rem;
+  margin: 10px;
 }
 
 .tetris-info {
@@ -16,14 +25,76 @@
   justify-content: space-around;
 }
 
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .tetris-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   position: relative;
   justify-content: space-around;
   width: calc(var(--square-size) * 30);
   border: 1px solid black;
   border-radius: 10px;
-  padding: 25px;
+  padding: 25px 10px;
+  margin: auto;
+  max-width: 85%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+  :root {
+    --square-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .detail {
+    font-size: 0.8rem;
+  }
+}
+
+/* styles for mobile devices */
+@media only screen and (max-width: 767px) {
+  :root {
+    --square-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.6rem;
+  }
+
+  .detail {
+    font-size: 0.6rem;
+  }
+
+  .controls-container {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .controls {
+    width: calc(var(--square-size) * 10);
+  }
+
+  .buttons-container {
+    width: calc(var(--square-size) * 5);
+  }
+
+  .tetris-container {
+    padding: 8px;
+  }
 }
 
 .tetris-container:focus {
@@ -33,6 +104,7 @@
 .board-container {
   width: fit-content;
   position: relative;
+  overflow: hidden;
 }
 
 .message-container {
@@ -59,4 +131,21 @@
   border-radius: 15px;
   background-color: white;
   padding: 20px 40px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 100%;
+  padding: 15px 25px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.subtitle {
+  margin: 0;
 }

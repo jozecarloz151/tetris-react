@@ -36,7 +36,7 @@ export function NextBlocks ({ nextBlocks }: Props) {
 
   return (
     <div className='right-side-container'>
-      <h3>NEXT</h3>
+      <h3 className='subtitle'>NEXT</h3>
       <div className='tetris-board' style={myStyle}>
         {
           nextBlocksTransformed.map(block => (
